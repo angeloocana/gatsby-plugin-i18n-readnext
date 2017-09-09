@@ -35,3 +35,80 @@ plugins: [
   }
 ]
 ```
+
+2. (Optional) Add **readNext** prop to your .md files containing the slugs
+
+> Pages without **readNext** prop will receive random data.
+
+```markdown
+    ---
+    title: Your awesome title
+    readNext:
+      - /en/blog/js/spred-operator/
+      - /en/blog/vim/vim-help-commands/
+      - /en/blog/terminal/install-zsh/
+    ---
+```
+
+3. Query!
+
+```graphql
+  {
+    allMarkdownRemark{
+      edges{
+        node{
+          frontmatter{
+            title
+          }
+          fields{
+            readNextPosts{
+              excerpt,
+              frontmatter{
+                date
+                title
+              }
+              fields{
+                langKey
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+```
+
+## TO DO (HELP US!)
+
+# 1) Add real graphql link to nodes
+
+I tried to link the whole node to the readNextPosts list,
+but I got an memory error.
+
+So I'm selecting only these fields:
+
+```graphql
+  {
+    excerpt,
+    frontmatter{
+      date
+      title
+    }
+    fields{
+      langKey
+      slug
+    }
+  }
+```
+
+# 2) Use only one gatsby API method
+
+I tried to use only **createPages** but an error happens in the build process when validating the graphql query for the pages.
+The project builds and graphIql works fine.
+
+Using **setFieldsOnGraphQLNodeType** I can't access the excerpt and date fields.
+
+
+
+PR are WELCOME!
