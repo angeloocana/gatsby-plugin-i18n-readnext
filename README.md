@@ -111,4 +111,4 @@ Using **setFieldsOnGraphQLNodeType** I can't access the excerpt and date fields.
 
 
 
-PR are WELCOME!
+PRs are WELCOME!
