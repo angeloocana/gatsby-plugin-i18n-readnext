@@ -81,7 +81,7 @@ plugins: [
 
 ## TO DO (HELP US!)
 
-# 1) Add real graphql link to nodes
+### 1) Add real graphql link to nodes
 
 I tried to link the whole node to the readNextPosts list,
 but I got an memory error.
@@ -102,7 +102,7 @@ So I'm selecting only these fields:
   }
 ```
 
-# 2) Use only one gatsby API method
+### 2) Use only one gatsby API method
 
 I tried to use only **createPages** but an error happens in the build process when validating the graphql query for the pages.
 The project builds and graphIql works fine.
