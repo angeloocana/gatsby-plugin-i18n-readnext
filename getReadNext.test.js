@@ -36,7 +36,8 @@ var postsTestFr1 = {
   }
 };
 
-var posts = [postsTestFr1, postsTestEn1, postsTestEn2, postsTestEn3];
+var posts = [postsTestFr1, postsTestEn1, undefined, // eslint-disable-line
+postsTestEn2, null, postsTestEn3];
 
 var containsOnlyLangKey = function containsOnlyLangKey(langKey, readNext) {
   return (0, _ptzAssert.notOk)((0, _ramda.any)(function (p) {

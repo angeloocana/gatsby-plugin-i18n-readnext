@@ -35,7 +35,9 @@ const postsTestFr1 = {
 const posts = [
   postsTestFr1,
   postsTestEn1,
+  undefined, // eslint-disable-line
   postsTestEn2,
+  null,
   postsTestEn3
 ];
 
