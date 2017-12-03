@@ -11,6 +11,12 @@ var _defaultOptions = require('./defaultOptions');
 
 var _getReadNext = require('./getReadNext');
 
+var _ramda = require('ramda');
+
+var _ramda2 = _interopRequireDefault(_ramda);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var createPages = function createPages(_ref, pluginOptions) {
   var graphql = _ref.graphql,
       boundActionCreators = _ref.boundActionCreators,
@@ -26,8 +32,8 @@ var createPages = function createPages(_ref, pluginOptions) {
           throw result.errors;
         }
 
-        var posts = result.data.allMarkdownRemark.edges.map(function (n) {
-          return n.node;
+        var posts = result.data.allMarkdownRemark.edges.filter(_ramda2.default.path(['node', 'fields', 'langKey'])).map(function (edge) {
+          return edge.node;
         });
         var createNodeField = boundActionCreators.createNodeField;
 
