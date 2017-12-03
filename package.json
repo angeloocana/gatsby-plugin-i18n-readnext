@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-i18n-readnext",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Read Next feature for multi language gatsby projects",
   "scripts": {
     "lint": "./node_modules/.bin/eslint --fix ./src",
